@@ -1,0 +1,20 @@
+{{ attach_library('webspark_isearch/reactjs') }}
+{{ attach_library('webspark_isearch/isearch') }}
+
+<H1>I Search</H1>
+<div class="clas-isearch-view" data-config='{
+        "type":"customList",
+        "defaultPhoto":"{{ isearch_image }}",
+        "testURL":"/isearch/?",
+        "displayType":"{{ isearch_display }}",
+        "ids":[
+            {{ isearch_ids }}
+        ],
+      "sourceIds":[{{ isearch_source_ids }}],
+      "showPhoto":{{ isearch_show_photo }},
+      "showTitle":{{ isearch_show_title }},
+      "showBio":{{ isearch_show_bio }},
+      "showEmail":{{ isearch_show_email }},
+      "showPhone":{{ isearch_show_phone }}
+      }'>
+</div>
