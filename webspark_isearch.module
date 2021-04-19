@@ -23,29 +23,47 @@ function webspark_isearch_preprocess_block(&$variables) {
     $blockType = $variables['elements']['content']['#block_content']->bundle();
     if ($blockType == "isearch") {
       $content = $variables['elements']['content'];
-      $ids        = $content['field_ids']['#items']->get(0)->value;
-      $sids       = $content['field_source_ids']['#items']->get(0)->value;
-      $display    = $content['field_display_type']['#items']->get(0)->value;
-      $showBio    = $content['field_show_bio']['#items']->get(0)->value;
-      $showEmail  = $content['field_show_email']['#items']->get(0)->value;
-      $showPhone  = $content['field_show_phone']['#items']->get(0)->value;
-      $showPhoto  = $content['field_show_photo']['#items']->get(0)->value;
-      $showTitle  = $content['field_show_title']['#items']->get(0)->value;
-      if ($content['field_media']['#items']) {
-        $image      = array_shift($content['field_media']['#items']->getValue());
+      if(isset($content['field_ids']['#items'])){
+        $ids        = $content['field_ids']['#items']->get(0)->value;
       }
-      $file = File::load($image['target_id']);
-      $uri = $file->getFileUri();
-      $imageurl = file_create_url($uri);
-      $variables['isearch_display'] = $display;
-      $variables['isearch_image'] = $imageurl;
-      $variables['isearch_ids'] = $ids;
-      $variables['isearch_source_ids'] = $sids;
-      $variables['isearch_show_bio'] = $showBio;
-      $variables['isearch_show_email'] = $showEmail;
-      $variables['isearch_show_phone'] = $showPhone;
-      $variables['isearch_show_photo'] = $showPhoto;
-      $variables['isearch_show_title'] = $showTitle;
+      if(isset($content['field_source_ids']['#items'])){
+        $sids       = $content['field_source_ids']['#items']->get(0)->value;
+      }
+      if(isset($content['field_display_type']['#items'])){
+        $display    = $content['field_display_type']['#items']->get(0)->value;
+      }
+      if(isset($content['field_show_bio']['#items'])){
+        $showBio    = $content['field_show_bio']['#items']->get(0)->value;
+      }
+      if(isset($content['field_show_email']['#items'])){
+        $showEmail  = $content['field_show_email']['#items']->get(0)->value;
+      }
+      if(isset($content['field_show_phone']['#items'])){
+        $showPhone  = $content['field_show_phone']['#items']->get(0)->value;
+      }
+      if(isset($content['field_show_photo']['#items'])){
+        $showPhoto  = $content['field_show_photo']['#items']->get(0)->value;
+      }
+      if(isset($content['field_show_title']['#items'])){
+        $showTitle  = $content['field_show_title']['#items']->get(0)->value;
+      }
+
+      if (isset($content['field_media']['#items'])) {
+        $image      = array_shift($content['field_media']['#items']->getValue());
+        $file = File::load($image['target_id']);
+        $uri = $file->getFileUri();
+        $imageurl = file_create_url($uri);
+      }
+
+      $variables['isearch_display']     = (isset($display) ? $display : '');
+      $variables['isearch_image']       = (isset($imageurl) ? $imageurl : '');
+      $variables['isearch_ids']         = (isset($ids) ? $ids : '');
+      $variables['isearch_source_ids']  = (isset($sids) ? $sids : '');
+      $variables['isearch_show_bio']    = (isset($showBio) ? $showBio : '');
+      $variables['isearch_show_email']  = (isset($showEmail) ? $showEmail : '');
+      $variables['isearch_show_phone']  = (isset($showPhone) ? $showPhone : '');
+      $variables['isearch_show_photo']  = (isset($showPhoto) ? $showPhoto : '');
+      $variables['isearch_show_title']  = (isset($showTitle) ? $showTitle : '');
     }
   }
 }
