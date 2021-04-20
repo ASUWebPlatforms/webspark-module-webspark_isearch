@@ -8,7 +8,12 @@ function webspark_isearch_theme_suggestions_block_alter(array &$suggestions, arr
   if (isset($variables['elements']['content']['#block_content'])){
     $blockType = $variables['elements']['content']['#block_content']->bundle();
     if ($blockType == 'isearch') {
-      $suggestions[] = 'block__' . 'isearch';
+      if (isset($variables['elements']['content']['#block_content'])) {
+        $blockContent = $variables['elements']['content']['#block_content'];
+        $type = $blockContent->get('field_isearchtype');
+        $typeString = $type->get(0)->get('value')->getString();
+        $suggestions[] = 'block__' . 'isearch_' . $typeString;
+      }
     }
   }
 }
@@ -58,6 +63,7 @@ function webspark_isearch_preprocess_block(&$variables) {
       $variables['isearch_display']     = (isset($display) ? $display : '');
       $variables['isearch_image']       = (isset($imageurl) ? $imageurl : '');
       $variables['isearch_ids']         = (isset($ids) ? $ids : '');
+      $variables['dept_id']             = (isset($ids) ? $ids : '');
       $variables['isearch_source_ids']  = (isset($sids) ? $sids : '');
       $variables['isearch_show_bio']    = (isset($showBio) ? $showBio : '');
       $variables['isearch_show_email']  = (isset($showEmail) ? $showEmail : '');
