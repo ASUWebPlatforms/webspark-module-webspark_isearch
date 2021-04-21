@@ -1,9 +1,6 @@
-uuid: 71681ad5-fb2d-473d-9e02-df527127c6f8
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: oZ9QOTlObuCc4AQ0DvOOXDuVqsCwLMsStamg_cOpvEk
 id: isearch
 label: iSearch
 revision: 0

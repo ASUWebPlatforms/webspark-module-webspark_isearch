@@ -1,4 +1,3 @@
-uuid: 51d64ef7-e59e-42a7-ba46-8ab9a94d22dd
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - field.storage.block_content.field_display_type
   module:
     - options
-_core:
-  default_config_hash: Vz4p5lDEZvmENLTRBKgzVA5RlMC3z6wr_mUswNfVl6k
 id: block_content.isearch.field_display_type
 field_name: field_display_type
 entity_type: block_content

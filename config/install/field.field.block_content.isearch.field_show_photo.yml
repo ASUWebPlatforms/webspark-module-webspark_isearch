@@ -1,12 +1,9 @@
-uuid: 31b4d3d5-736b-470d-b244-12b445ce8810
 langcode: en
 status: true
 dependencies:
   config:
     - block_content.type.isearch
     - field.storage.block_content.field_show_photo
-_core:
-  default_config_hash: XXZZv_vmCJg8W71D1CR9YGtUC_nDkaFNCCI6kwiRYUc
 id: block_content.isearch.field_show_photo
 field_name: field_show_photo
 entity_type: block_content

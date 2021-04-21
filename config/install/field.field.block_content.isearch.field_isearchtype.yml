@@ -1,4 +1,3 @@
-uuid: 96c47c8f-7ea0-40f0-bc57-b1912789edb0
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - field.storage.block_content.field_isearchtype
   module:
     - options
-_core:
-  default_config_hash: g9xtiK8OJ8OykEYiwHrTaneU_9978EgWE-13bcJT4LY
 id: block_content.isearch.field_isearchtype
 field_name: field_isearchtype
 entity_type: block_content

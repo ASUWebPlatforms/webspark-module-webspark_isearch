@@ -1,11 +1,8 @@
-uuid: e8e7a7da-dd6a-41da-aa04-aafd8fd08e1e
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
-_core:
-  default_config_hash: 7w_pbjIVOyuq-MGVK3hKq119qeavJGCzlH26DxGDGoA
 id: block_content.field_source_ids
 field_name: field_source_ids
 entity_type: block_content

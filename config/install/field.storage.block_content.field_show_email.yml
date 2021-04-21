@@ -1,11 +1,8 @@
-uuid: 16b37db8-5569-4500-970d-d389701832ef
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
-_core:
-  default_config_hash: supk6V6MGEPnCXMxBIzRXlFAhtbl_5uqsQKtro-C0SE
 id: block_content.field_show_email
 field_name: field_show_email
 entity_type: block_content

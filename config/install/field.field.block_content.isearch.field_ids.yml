@@ -1,12 +1,9 @@
-uuid: b093a200-927a-45dd-8dad-e5aa236af39f
 langcode: en
 status: true
 dependencies:
   config:
     - block_content.type.isearch
     - field.storage.block_content.field_ids
-_core:
-  default_config_hash: 8PuwcYCdXFkTNv0HyBfUUZmn1hbD2vHexRJa9GcPxgs
 id: block_content.isearch.field_ids
 field_name: field_ids
 entity_type: block_content

@@ -1,4 +1,3 @@
-uuid: d7061723-7a0c-4f65-ac87-f334a7a0fb53
 langcode: en
 status: true
 dependencies:
@@ -17,8 +16,6 @@ dependencies:
     - field.field.block_content.isearch.field_source_ids
   module:
     - options
-_core:
-  default_config_hash: zvUyFTKJrXevFZlHF5c6OgYcEIbVRqyuA3QOYl2GJQk
 id: block_content.isearch.default
 targetEntityType: block_content
 bundle: isearch
