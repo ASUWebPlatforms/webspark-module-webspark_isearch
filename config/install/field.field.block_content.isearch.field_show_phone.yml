@@ -1,9 +1,12 @@
+uuid: 89c41bb9-61ca-47b5-a8c9-9f1474239b52
 langcode: en
 status: true
 dependencies:
   config:
     - block_content.type.isearch
     - field.storage.block_content.field_show_phone
+_core:
+  default_config_hash: 5DzP1vn3SQZLms3vFqu9KIBRRmS31us9Z3gGY5hC8Gw
 id: block_content.isearch.field_show_phone
 field_name: field_show_phone
 entity_type: block_content

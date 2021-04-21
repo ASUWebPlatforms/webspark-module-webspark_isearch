@@ -1,13 +1,11 @@
-uuid: e8e7a7da-dd6a-41da-aa04-aafd8fd08e1e
+uuid: a09adb5e-6b49-449b-a0e0-9c7b37082cb1
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
-_core:
-  default_config_hash: 7w_pbjIVOyuq-MGVK3hKq119qeavJGCzlH26DxGDGoA
-id: block_content.field_source_ids
-field_name: field_source_ids
+id: block_content.field_selected_filters
+field_name: field_selected_filters
 entity_type: block_content
 type: string
 settings:

@@ -1,8 +1,11 @@
+uuid: 8ffb2412-c18e-42aa-8be0-bde936fd7a93
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
+_core:
+  default_config_hash: jotH9BfxvQy7iAz3mdJJQT7hvaHAYTwtorkwVsJOBIw
 id: block_content.field_show_phone
 field_name: field_show_phone
 entity_type: block_content

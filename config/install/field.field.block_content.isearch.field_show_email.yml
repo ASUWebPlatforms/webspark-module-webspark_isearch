@@ -1,9 +1,12 @@
+uuid: 00d93b84-145f-44ec-81fa-c5a02609f200
 langcode: en
 status: true
 dependencies:
   config:
     - block_content.type.isearch
     - field.storage.block_content.field_show_email
+_core:
+  default_config_hash: UwyNFlh_ad7hlZYY4IsdrliO2oiODNGM8sbxEys9KKI
 id: block_content.isearch.field_show_email
 field_name: field_show_email
 entity_type: block_content

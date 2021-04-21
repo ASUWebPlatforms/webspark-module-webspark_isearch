@@ -34,6 +34,9 @@ function webspark_isearch_preprocess_block(&$variables) {
       if(isset($content['field_source_ids']['#items'])){
         $sids       = $content['field_source_ids']['#items']->get(0)->value;
       }
+      if(isset($content['field_selected_filters']['#items'])){
+        $filters    = htmlspecialchars_decode($content['field_selected_filters']['#items']->get(0)->value);
+      }
       if(isset($content['field_display_type']['#items'])){
         $display    = $content['field_display_type']['#items']->get(0)->value;
       }
@@ -70,6 +73,7 @@ function webspark_isearch_preprocess_block(&$variables) {
       $variables['isearch_show_phone']  = (isset($showPhone) ? $showPhone : '');
       $variables['isearch_show_photo']  = (isset($showPhoto) ? $showPhoto : '');
       $variables['isearch_show_title']  = (isset($showTitle) ? $showTitle : '');
+      $variables['isearch_filters']     = (isset($filters) ? $filters : '');
     }
   }
 }

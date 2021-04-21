@@ -1,8 +1,11 @@
+uuid: 2be74a3d-1504-4183-b48a-805e2d26e44b
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
+_core:
+  default_config_hash: GhR0oFyMgbqiSPUoZB1vzYhfIQGCRXLDASSpM2GvMW0
 id: block_content.field_show_bio
 field_name: field_show_bio
 entity_type: block_content

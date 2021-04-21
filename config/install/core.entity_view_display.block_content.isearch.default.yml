@@ -1,3 +1,4 @@
+uuid: d7061723-7a0c-4f65-ac87-f334a7a0fb53
 langcode: en
 status: true
 dependencies:
@@ -7,6 +8,7 @@ dependencies:
     - field.field.block_content.isearch.field_ids
     - field.field.block_content.isearch.field_isearchtype
     - field.field.block_content.isearch.field_media
+    - field.field.block_content.isearch.field_selected_filters
     - field.field.block_content.isearch.field_show_bio
     - field.field.block_content.isearch.field_show_email
     - field.field.block_content.isearch.field_show_phone
@@ -15,6 +17,8 @@ dependencies:
     - field.field.block_content.isearch.field_source_ids
   module:
     - options
+_core:
+  default_config_hash: zvUyFTKJrXevFZlHF5c6OgYcEIbVRqyuA3QOYl2GJQk
 id: block_content.isearch.default
 targetEntityType: block_content
 bundle: isearch
@@ -49,6 +53,14 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_selected_filters:
+    weight: 11
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_show_bio:
     weight: 3

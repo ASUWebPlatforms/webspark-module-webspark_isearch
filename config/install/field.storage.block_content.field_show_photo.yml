@@ -1,8 +1,11 @@
+uuid: 2f77d7f3-96db-4087-806a-14742d1af0e3
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
+_core:
+  default_config_hash: smh9cIQb67pCJ_N7G9cT6wBB1ChG4YCkEys-NR_uEK0
 id: block_content.field_show_photo
 field_name: field_show_photo
 entity_type: block_content
