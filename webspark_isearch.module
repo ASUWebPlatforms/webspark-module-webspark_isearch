@@ -5,7 +5,7 @@ use Drupal\media\Entity\Media;
 use Drupal\file\Entity\File;
 
 function webspark_isearch_theme_suggestions_block_alter(array &$suggestions, array $variables) {
-  if (isset($variables['elements']['content']['#block_content'])){
+  if (isset($variables['elements']['content']['#block_content'])) {
     $blockType = $variables['elements']['content']['#block_content']->bundle();
     if ($blockType == 'isearch') {
       if (isset($variables['elements']['content']['#block_content'])) {
@@ -23,36 +23,36 @@ function webspark_isearch_theme_suggestions_block_alter(array &$suggestions, arr
  * Implements hook_preprocess_block().
  */
 function webspark_isearch_preprocess_block(&$variables) {
-  $block = Block::load($variables['elements']['#id']);
+
   if (isset($variables['elements']['content']['#block_content'])){
     $blockType = $variables['elements']['content']['#block_content']->bundle();
     if ($blockType == "isearch") {
       $content = $variables['elements']['content'];
-      if(isset($content['field_ids']['#items'])){
+      if (isset($content['field_ids']['#items'])) {
         $ids        = $content['field_ids']['#items']->get(0)->value;
       }
-      if(isset($content['field_source_ids']['#items'])){
+      if (isset($content['field_source_ids']['#items'])) {
         $sids       = $content['field_source_ids']['#items']->get(0)->value;
       }
-      if(isset($content['field_selected_filters']['#items'])){
+      if (isset($content['field_selected_filters']['#items'])) {
         $filters    = htmlspecialchars_decode($content['field_selected_filters']['#items']->get(0)->value);
       }
-      if(isset($content['field_display_type']['#items'])){
+      if (isset($content['field_display_type']['#items'])) {
         $display    = $content['field_display_type']['#items']->get(0)->value;
       }
-      if(isset($content['field_show_bio']['#items'])){
+      if (isset($content['field_show_bio']['#items'])) {
         $showBio    = $content['field_show_bio']['#items']->get(0)->value;
       }
-      if(isset($content['field_show_email']['#items'])){
+      if (isset($content['field_show_email']['#items'])) {
         $showEmail  = $content['field_show_email']['#items']->get(0)->value;
       }
-      if(isset($content['field_show_phone']['#items'])){
+      if (isset($content['field_show_phone']['#items'])) {
         $showPhone  = $content['field_show_phone']['#items']->get(0)->value;
       }
-      if(isset($content['field_show_photo']['#items'])){
+      if (isset($content['field_show_photo']['#items'])) {
         $showPhoto  = $content['field_show_photo']['#items']->get(0)->value;
       }
-      if(isset($content['field_show_title']['#items'])){
+      if (isset($content['field_show_title']['#items'])) {
         $showTitle  = $content['field_show_title']['#items']->get(0)->value;
       }
 
