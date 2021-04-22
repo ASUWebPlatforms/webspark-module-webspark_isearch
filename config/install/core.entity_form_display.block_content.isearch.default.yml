@@ -7,12 +7,15 @@ dependencies:
     - field.field.block_content.isearch.field_ids
     - field.field.block_content.isearch.field_isearchtype
     - field.field.block_content.isearch.field_media
+    - field.field.block_content.isearch.field_selected_filters
     - field.field.block_content.isearch.field_show_bio
     - field.field.block_content.isearch.field_show_email
     - field.field.block_content.isearch.field_show_phone
     - field.field.block_content.isearch.field_show_photo
     - field.field.block_content.isearch.field_show_title
     - field.field.block_content.isearch.field_source_ids
+  module:
+    - media_library
 id: block_content.isearch.default
 targetEntityType: block_content
 bundle: isearch
@@ -25,7 +28,7 @@ content:
     type: options_select
     region: content
   field_ids:
-    weight: 4
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -39,14 +42,19 @@ content:
     type: options_select
     region: content
   field_media:
-    weight: 26
+    weight: 11
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_selected_filters:
+    weight: 5
+    settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
+    type: string_textfield
     region: content
   field_show_bio:
     weight: 8
@@ -84,7 +92,7 @@ content:
     type: boolean_checkbox
     region: content
   field_source_ids:
-    weight: 5
+    weight: 4
     settings:
       size: 60
       placeholder: ''

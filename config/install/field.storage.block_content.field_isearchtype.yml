@@ -13,6 +13,9 @@ settings:
     -
       value: customList
       label: 'Custom List'
+    -
+      value: depList
+      label: 'Department List'
   allowed_values_function: ''
 module: options
 locked: false

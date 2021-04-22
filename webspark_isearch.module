@@ -5,10 +5,15 @@ use Drupal\media\Entity\Media;
 use Drupal\file\Entity\File;
 
 function webspark_isearch_theme_suggestions_block_alter(array &$suggestions, array $variables) {
-  if (isset($variables['elements']['content']['#block_content'])){
+  if (isset($variables['elements']['content']['#block_content'])) {
     $blockType = $variables['elements']['content']['#block_content']->bundle();
     if ($blockType == 'isearch') {
-      $suggestions[] = 'block__' . 'isearch';
+      if (isset($variables['elements']['content']['#block_content'])) {
+        $blockContent = $variables['elements']['content']['#block_content'];
+        $type = $blockContent->get('field_isearchtype');
+        $typeString = $type->get(0)->get('value')->getString();
+        $suggestions[] = 'block__' . 'isearch_' . $typeString;
+      }
     }
   }
 }
@@ -18,33 +23,36 @@ function webspark_isearch_theme_suggestions_block_alter(array &$suggestions, arr
  * Implements hook_preprocess_block().
  */
 function webspark_isearch_preprocess_block(&$variables) {
-  $block = Block::load($variables['elements']['#id']);
+
   if (isset($variables['elements']['content']['#block_content'])){
     $blockType = $variables['elements']['content']['#block_content']->bundle();
     if ($blockType == "isearch") {
       $content = $variables['elements']['content'];
-      if(isset($content['field_ids']['#items'])){
+      if (isset($content['field_ids']['#items'])) {
         $ids        = $content['field_ids']['#items']->get(0)->value;
       }
-      if(isset($content['field_source_ids']['#items'])){
+      if (isset($content['field_source_ids']['#items'])) {
         $sids       = $content['field_source_ids']['#items']->get(0)->value;
       }
-      if(isset($content['field_display_type']['#items'])){
+      if (isset($content['field_selected_filters']['#items'])) {
+        $filters    = htmlspecialchars_decode($content['field_selected_filters']['#items']->get(0)->value);
+      }
+      if (isset($content['field_display_type']['#items'])) {
         $display    = $content['field_display_type']['#items']->get(0)->value;
       }
-      if(isset($content['field_show_bio']['#items'])){
+      if (isset($content['field_show_bio']['#items'])) {
         $showBio    = $content['field_show_bio']['#items']->get(0)->value;
       }
-      if(isset($content['field_show_email']['#items'])){
+      if (isset($content['field_show_email']['#items'])) {
         $showEmail  = $content['field_show_email']['#items']->get(0)->value;
       }
-      if(isset($content['field_show_phone']['#items'])){
+      if (isset($content['field_show_phone']['#items'])) {
         $showPhone  = $content['field_show_phone']['#items']->get(0)->value;
       }
-      if(isset($content['field_show_photo']['#items'])){
+      if (isset($content['field_show_photo']['#items'])) {
         $showPhoto  = $content['field_show_photo']['#items']->get(0)->value;
       }
-      if(isset($content['field_show_title']['#items'])){
+      if (isset($content['field_show_title']['#items'])) {
         $showTitle  = $content['field_show_title']['#items']->get(0)->value;
       }
 
@@ -58,12 +66,14 @@ function webspark_isearch_preprocess_block(&$variables) {
       $variables['isearch_display']     = (isset($display) ? $display : '');
       $variables['isearch_image']       = (isset($imageurl) ? $imageurl : '');
       $variables['isearch_ids']         = (isset($ids) ? $ids : '');
+      $variables['dept_id']             = (isset($ids) ? $ids : '');
       $variables['isearch_source_ids']  = (isset($sids) ? $sids : '');
       $variables['isearch_show_bio']    = (isset($showBio) ? $showBio : '');
       $variables['isearch_show_email']  = (isset($showEmail) ? $showEmail : '');
       $variables['isearch_show_phone']  = (isset($showPhone) ? $showPhone : '');
       $variables['isearch_show_photo']  = (isset($showPhoto) ? $showPhoto : '');
       $variables['isearch_show_title']  = (isset($showTitle) ? $showTitle : '');
+      $variables['isearch_filters']     = (isset($filters) ? $filters : '');
     }
   }
 }
