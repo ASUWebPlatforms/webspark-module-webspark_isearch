@@ -5,7 +5,7 @@ namespace Drupal\webspark_isearch\Form;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class iSearchConfigForm extends ConfigFormBase {
+class IsearchConfigForm extends ConfigFormBase {
 
   /**
    * {@inheritdoc}
