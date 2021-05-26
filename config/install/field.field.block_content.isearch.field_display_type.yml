@@ -4,6 +4,9 @@ dependencies:
   config:
     - block_content.type.isearch
     - field.storage.block_content.field_display_type
+  enforced:
+    module:
+      - webspark_isearch
   module:
     - options
 id: block_content.isearch.field_display_type

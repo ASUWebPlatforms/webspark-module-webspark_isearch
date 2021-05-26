@@ -4,6 +4,9 @@ dependencies:
   config:
     - block_content.type.isearch
     - field.storage.block_content.field_show_email
+  enforced:
+    module:
+      - webspark_isearch
 id: block_content.isearch.field_show_email
 field_name: field_show_email
 entity_type: block_content

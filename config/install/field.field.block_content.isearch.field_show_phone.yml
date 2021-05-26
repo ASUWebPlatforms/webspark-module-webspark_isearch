@@ -4,6 +4,9 @@ dependencies:
   config:
     - block_content.type.isearch
     - field.storage.block_content.field_show_phone
+  enforced:
+    module:
+      - webspark_isearch
 id: block_content.isearch.field_show_phone
 field_name: field_show_phone
 entity_type: block_content

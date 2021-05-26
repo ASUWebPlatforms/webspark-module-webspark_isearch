@@ -21,7 +21,7 @@ class IsearchConfigForm extends ConfigFormBase {
     // Form constructor.
     $form = parent::buildForm($form, $form_state);
     // Default settings.
-    $config = $this->config('isearch.settings');
+    $config = $this->config('webspark_isearch.settings');
 
     $form['solr'] = [
       '#type' => 'textfield',
@@ -36,7 +36,7 @@ class IsearchConfigForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $config = $this->config('isearch.settings');
+    $config = $this->config('webspark_isearch.settings');
     $config->set('solr', $form_state->getValue('solr'));
     $config->save();
     return parent::submitForm($form, $form_state);

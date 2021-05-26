@@ -4,6 +4,9 @@ dependencies:
   config:
     - block_content.type.isearch
     - field.storage.block_content.field_show_photo
+  enforced:
+    module:
+      - webspark_isearch
 id: block_content.isearch.field_show_photo
 field_name: field_show_photo
 entity_type: block_content

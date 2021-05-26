@@ -7,13 +7,15 @@ dependencies:
     - field.field.block_content.isearch.field_ids
     - field.field.block_content.isearch.field_isearchtype
     - field.field.block_content.isearch.field_media
-    - field.field.block_content.isearch.field_selected_filters
     - field.field.block_content.isearch.field_show_bio
     - field.field.block_content.isearch.field_show_email
     - field.field.block_content.isearch.field_show_phone
     - field.field.block_content.isearch.field_show_photo
     - field.field.block_content.isearch.field_show_title
     - field.field.block_content.isearch.field_source_ids
+  enforced:
+    module:
+      - webspark_isearch
   module:
     - media_library
 id: block_content.isearch.default
@@ -21,13 +23,22 @@ targetEntityType: block_content
 bundle: isearch
 mode: default
 content:
-  field_display_type:
-    weight: 2
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   field_ids:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_media:
+    weight: 9
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_selected_filters:
     weight: 3
     settings:
       size: 60
@@ -35,64 +46,43 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
-  field_isearchtype:
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
-  field_media:
-    weight: 11
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
-    type: media_library_widget
-    region: content
-  field_selected_filters:
-    weight: 5
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_show_bio:
-    weight: 8
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_show_email:
-    weight: 9
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_show_phone:
-    weight: 10
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_show_photo:
     weight: 6
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
-  field_show_title:
+  field_show_email:
     weight: 7
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
-  field_source_ids:
+  field_show_phone:
+    weight: 8
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_show_photo:
     weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_show_title:
+    weight: 5
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_source_ids:
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -107,4 +97,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_display_type: true
+  field_isearchtype: true
