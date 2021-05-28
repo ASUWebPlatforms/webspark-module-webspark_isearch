@@ -18,21 +18,20 @@ dependencies:
       - webspark_isearch
   module:
     - media_library
+    - webspark_isearch
 id: block_content.isearch.default
 targetEntityType: block_content
 bundle: isearch
 mode: default
 content:
   field_ids:
-    weight: 1
-    settings:
-      size: 60
-      placeholder: ''
+    weight: 2
+    settings: {  }
     third_party_settings: {  }
-    type: string_textfield
+    type: field_asurite_id_widget
     region: content
   field_media:
-    weight: 9
+    weight: 8
     settings:
       media_types: {  }
     third_party_settings: {  }
@@ -47,47 +46,45 @@ content:
     type: string_textfield
     region: content
   field_show_bio:
-    weight: 6
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_show_email:
-    weight: 7
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_show_phone:
-    weight: 8
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_show_photo:
-    weight: 4
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_show_title:
     weight: 5
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
-  field_source_ids:
-    weight: 2
+  field_show_email:
+    weight: 6
     settings:
-      size: 60
-      placeholder: ''
+      display_label: true
     third_party_settings: {  }
-    type: string_textfield
+    type: boolean_checkbox
+    region: content
+  field_show_phone:
+    weight: 7
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_show_photo:
+    weight: 3
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_show_title:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_source_ids:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: field_directory_widget
     region: content
   info:
     type: string_textfield
