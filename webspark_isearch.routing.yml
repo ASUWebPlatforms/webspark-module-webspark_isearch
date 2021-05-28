@@ -12,3 +12,10 @@ isearch.call:
     _title: 'iSearch'
   requirements:
     _permission: 'access content'
+isearch.directory:
+  path: '/directory'
+  defaults:
+    _controller: '\Drupal\webspark_isearch\Controller\iSearchController::directory'
+    _title: 'Directory'
+  requirements:
+    _permission: 'access content'
