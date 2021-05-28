@@ -3,4 +3,4 @@ dependencies:
   enforced:
     module:
       - webspark_isearch
-
+directory_path: 'https://isearch.asu.edu/endpoints/dept_tree/json'
