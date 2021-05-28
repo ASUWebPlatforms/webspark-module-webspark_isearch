@@ -8,7 +8,6 @@ isearch:
   dependencies:
     - core/jquery
     - core/drupalSettings
-
 reactjs:
   remote: https://unpkg.com/react@16/umd/react.development.js
   version: 16.14.0
@@ -20,3 +19,25 @@ reactjs:
   js:
     https://unpkg.com/react@16/umd/react.development.js: { type: external, minified: true, weight: -10 }
     https://unpkg.com/react-dom@16/umd/react-dom.development.js: { type: external, minified: true, weight: -10 }
+jstree:
+  version: 1.x
+  css:
+    theme:
+      https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css: { type: external, minified: true }
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js: { type: external, minified: true }
+  dependencies:
+    - core/jquery
+
+directory_field:
+  js:
+    js/directory-field.js: {}
+  css:
+    theme:
+      css/directory-field.css: { weight: 10 }
+asurite_id_field:
+  js:
+    js/asurite-id-field.js: {}
+  css:
+    theme:
+      css/asurite-id-field.css: { weight: 10 }

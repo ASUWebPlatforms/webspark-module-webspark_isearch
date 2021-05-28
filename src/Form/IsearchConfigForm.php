@@ -29,6 +29,12 @@ class IsearchConfigForm extends ConfigFormBase {
       '#default_value' => $config->get('solr'),
     ];
 
+    $form['directory_path'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Directory path'),
+      '#default_value' => $config->get('directory_path'),
+    ];
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -38,6 +44,7 @@ class IsearchConfigForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $config = $this->config('webspark_isearch.settings');
     $config->set('solr', $form_state->getValue('solr'));
+    $config->set('directory_path', $form_state->getValue('directory_path'));
     $config->save();
     return parent::submitForm($form, $form_state);
   }
@@ -47,7 +54,7 @@ class IsearchConfigForm extends ConfigFormBase {
    */
   protected function getEditableConfigNames() {
     return [
-      'isearch.settings',
+      'webspark_isearch.settings',
     ];
   }
 
