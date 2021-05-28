@@ -1,0 +1,6 @@
+solr: 'https://asudir-solr.asu.edu/asudir/directory/select'
+dependencies:
+  enforced:
+    module:
+      - webspark_isearch
+

@@ -1,6 +1,9 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - webspark_isearch
 id: isearch
 label: iSearch
 revision: 0

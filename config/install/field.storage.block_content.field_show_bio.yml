@@ -1,10 +1,11 @@
 langcode: en
 status: true
 dependencies:
+  enforced:
+    module:
+      - webspark_isearch
   module:
     - block_content
-_core:
-  default_config_hash: GhR0oFyMgbqiSPUoZB1vzYhfIQGCRXLDASSpM2GvMW0
 id: block_content.field_show_bio
 field_name: field_show_bio
 entity_type: block_content

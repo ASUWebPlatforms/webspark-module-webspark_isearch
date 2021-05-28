@@ -4,6 +4,9 @@ dependencies:
   config:
     - block_content.type.isearch
     - field.storage.block_content.field_show_bio
+  enforced:
+    module:
+      - webspark_isearch
 id: block_content.isearch.field_show_bio
 field_name: field_show_bio
 entity_type: block_content

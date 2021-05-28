@@ -1,6 +1,9 @@
 langcode: en
 status: true
 dependencies:
+  enforced:
+    module:
+      - webspark_isearch
   module:
     - block_content
 id: block_content.field_show_phone
