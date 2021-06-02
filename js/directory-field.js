@@ -14,7 +14,6 @@
           var tree_target_obj = $(this).siblings('#directory-tree-options');
           $.getJSON("/directory", function(json) {
             // Convert and check the default values.
-            console.log(default_values);  
             converted_json = convert_dir(json, default_values);
             // Add the jstree to the object.
             tree_target_obj // listen for event
@@ -58,16 +57,14 @@ function convert_dir(data, default_values) {
     var new_element = {};
     new_element.id = element.dept_nid;
     new_element.text = element.name;
+    if (default_values.includes(element.dept_nid.toString())) {
+      new_element.state = {'selected' : true};
+    }
     if (element.children && element.children.length > 0) {
-      new_element.state = {"checkbox_disabled" : true, "disabled" : true};
-      new_element.type = "root";
       new_element.children = convert_dir(element.children, default_values);
     }
     else {
       new_element.type = "child";
-      if (default_values.includes(element.dept_nid.toString())) {
-        new_element.state = {'selected' : true};
-      }
     }
     siblings.push(new_element);
   });
