@@ -25,9 +25,9 @@ function webspark_isearch_preprocess_block(&$variables) {
   // Check if we have a block entity.
   if (isset($variables['content']['#block_content']) && ($block = $variables['content']['#block_content'])) {
     // Split the asurite id for the react component.
-    if (isset($block->field_ids->value) && $azurite_id = $block->field_ids->value) {
-      // Should be in form: "azuriteId1"-deptid1, "azuriteId2"-deptid2, ...
-      $persons = explode(",",$azurite_id);
+    if (isset($block->field_ids->value) && $asurite_id = $block->field_ids->value) {
+      // Should be in form: "asuriteId1"-deptid1, "asuriteId2"-deptid2, ...
+      $persons = explode(",", $asurite_id);
       $ids = $sourceIds = [];
       foreach ($persons as $person) {
         $parts = explode("-", $person);
