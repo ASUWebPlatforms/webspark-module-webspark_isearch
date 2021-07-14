@@ -2,30 +2,21 @@ isearch:
   version: 1.x
   header: false
   js:
-    react-component/asu-react-isearch-view/dist/drupalIsearchViewer.js: { weight: -5 }
+    node_modules/asu-react-isearch-view/dist/drupalIsearchViewer.js: { weight: -5 }
   css:
     css/clas_isearch_view.css: {}
   dependencies:
     - core/jquery
     - core/drupalSettings
-reactjs:
-  remote: https://unpkg.com/react@16/umd/react.development.js
-  version: 16.14.0
-  header: false
-  license:
-    name: MIT
-    url: https://unpkg.com/react@16/umd/react.development.js
-    gpl-compatible: true
-  js:
-    https://unpkg.com/react@16/umd/react.development.js: { type: external, minified: true, weight: -10 }
-    https://unpkg.com/react-dom@16/umd/react-dom.development.js: { type: external, minified: true, weight: -10 }
+    - asu_react_integration/reactjs
+
 jstree:
   version: 1.x
   css:
     theme:
-      https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css: { type: external, minified: true }
+      jquery-plugin/jstree/dist/themes/default/style.min.css: {}
   js:
-    https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js: { type: external, minified: true }
+    jquery-plugin/jstree/dist/jstree.min.js: {}
   dependencies:
     - core/jquery
 
