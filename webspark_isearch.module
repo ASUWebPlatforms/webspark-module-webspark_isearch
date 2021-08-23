@@ -25,19 +25,33 @@ function webspark_isearch_preprocess_block(&$variables) {
   // Check if we have a block entity.
   if (isset($variables['content']['#block_content']) && ($block = $variables['content']['#block_content']) &&
     isset($variables['derivative_plugin_id']) && $variables['derivative_plugin_id'] == 'isearch') {
-    // Split the asurite id for the react component.
-    if (isset($block->field_ids->value) && $asurite_id = $block->field_ids->value) {
-      // Should be in form: "asuriteId1"-deptid1, "asuriteId2"-deptid2, ...
-      $persons = explode(",", $asurite_id);
-      $ids = $sourceIds = [];
-      foreach ($persons as $person) {
-        $parts = explode("-", $person);
-        $ids[] = $parts[0];
-        $sourceIds[] = $parts[1];
+
+    // Get the type of the isearch.
+    $type = $block->get('field_isearchtype');
+    $typeString = $type->get(0)->get('value')->getString();
+
+    if ($typeString == 'depList') {
+      // Take only the departments.
+      if (isset($block->field_source_ids->value) && $source_ids = $block->field_source_ids->value) {
+        $variables['ids'] = $source_ids;
       }
-      $variables['ids'] = implode(",", $ids);
-      $variables['sourceIds'] = implode(",", $sourceIds);
     }
+    else {
+      // Split the asurite id for the react component.
+      if (isset($block->field_ids->value) && $asurite_id = $block->field_ids->value) {
+        // Should be in form: "asuriteId1"-deptid1, "asuriteId2"-deptid2, ...
+        $persons = explode(",", $asurite_id);
+        $ids = $sourceIds = [];
+        foreach ($persons as $person) {
+          $parts = explode("-", $person);
+          $ids[] = $parts[0];
+          $sourceIds[] = $parts[1];
+        }
+        $variables['ids'] = implode(",", $ids);
+        $variables['sourceIds'] = implode(",", $sourceIds);
+      }
+    }
+
     //Set default image.
     $module_handler = \Drupal::service('module_handler');
     $path_module = $module_handler->getModule('webspark_isearch')->getPath();
