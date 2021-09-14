@@ -3,6 +3,14 @@
 
   Drupal.behaviors.asuriteIdField = {
     attach: function (context, settings) {
+
+      // Check when to display the widget. It is not removed in case we go back
+      // to having this option.
+      check_azurite_widget_display();
+      $('select[name="settings[block_form][field_isearchtype]"]').change(function() {
+        check_azurite_widget_display();
+      });
+
       // Check if there are directory type fields.
       if ($(context).find('.asurite-tree').length) {
         $('.asurite-tree').each(function(index) {
@@ -86,7 +94,25 @@ function create_tree(default_values) {
       "plugins" : [ "checkbox", "types" ]
     });
   });
- 
+
+}
+
+function check_azurite_widget_display() {
+  if ($("select[name='settings[block_form][field_isearchtype]']").val() === 'depList') {
+    $('.field--widget-field-asurite-id-widget').hide();
+    $('.form-item-settings-block-form-field-employee-classes').show();
+    $('.field--name-field-filter-on-title').show();
+    $('.field--name-field-filter-on-expertise').show();
+    $('.field--name-field-sort-by').show();
+  }
+  else {
+    $('.field--widget-field-asurite-id-widget').show();
+    $('.form-item-settings-block-form-field-employee-classes').hide();
+    $('.field--name-field-filter-on-title').hide();
+    $('.field--name-field-filter-on-expertise').hide();
+    $('.field--name-field-sort-by').hide();
+  }
+
 }
 
 })(jQuery, Drupal, drupalSettings);

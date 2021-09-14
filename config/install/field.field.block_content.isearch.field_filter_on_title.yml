@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.isearch
+    - field.storage.block_content.field_filter_on_title
+id: block_content.isearch.field_filter_on_title
+field_name: field_filter_on_title
+entity_type: block_content
+bundle: isearch
+label: 'Filter on title'
+description: 'Filter on an exact match. Optionally, for advanced users: provide a Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp"> RegExp </a>  compatible Regular Expression to match on.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

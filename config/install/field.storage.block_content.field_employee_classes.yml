@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_employee_classes
+field_name: field_employee_classes
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Faculty
+      label: Faculty
+    -
+      value: 'Graduate Assistant/Associate'
+      label: 'Graduate Assistant/Associate'
+    -
+      value: 'University Staff'
+      label: 'University Staff'
+    -
+      value: 'Faculty w/Admin Appointment'
+      label: 'Faculty w/Admin Appointment'
+    -
+      value: 'Post Doctoral Scholars'
+      label: 'Post Doctoral Scholars'
+    -
+      value: 'Academic Professional'
+      label: 'Academic Professional'
+    -
+      value: 'Student Worker'
+      label: 'Student Worker'
+    -
+      value: Administrative
+      label: Administrative
+    -
+      value: Classified
+      label: Classified
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

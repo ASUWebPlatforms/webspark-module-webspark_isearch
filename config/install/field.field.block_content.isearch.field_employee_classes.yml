@@ -3,23 +3,18 @@ status: true
 dependencies:
   config:
     - block_content.type.isearch
-    - field.storage.block_content.field_isearchtype
-  enforced:
-    module:
-      - webspark_isearch
+    - field.storage.block_content.field_employee_classes
   module:
     - options
-id: block_content.isearch.field_isearchtype
-field_name: field_isearchtype
+id: block_content.isearch.field_employee_classes
+field_name: field_employee_classes
 entity_type: block_content
 bundle: isearch
-label: Type
+label: 'Employee classes'
 description: ''
-required: true
+required: false
 translatable: false
-default_value:
-  -
-    value: customList
+default_value: {  }
 default_value_callback: ''
 settings: {  }
 field_type: list_string
