@@ -4,7 +4,8 @@ isearch:
   js:
     node_modules/asu-react-isearch-view/dist/drupalIsearchViewer.js: { weight: -5 }
   css:
-    css/clas_isearch_view.css: {}
+    theme:
+      css/clas_isearch_view.css: {}
   dependencies:
     - core/jquery
     - core/drupalSettings
