@@ -1,0 +1,20 @@
+<?php
+
+function _webspark_isearch_revert_all_module_config() {
+  $module = \Drupal::service('module_handler')
+    ->getModule(basename(__FILE__, '.install'))
+    ->getName();
+  // Unlock the configuration storage.
+  \Drupal::state()->set('configuration_locked', FALSE);
+  // Revert all configs from this module.
+  \Drupal::service('webspark.config_manager')->revertAll($module);
+  // Lock the configuration storage.
+  \Drupal::state()->set('configuration_locked', TRUE);
+}
+
+/**
+ * Apply Bio field related changes.
+ */
+function webspark_isearch_update_9001(&$sandbox) {
+  _webspark_isearch_revert_all_module_config();
+}
