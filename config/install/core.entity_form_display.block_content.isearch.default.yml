@@ -19,13 +19,12 @@ dependencies:
       - webspark_isearch
   module:
     - field_group
-    - media_library
 third_party_settings:
   field_group:
     group_appearance_settings:
       children:
-        - field_spacing_top
         - field_spacing_bottom
+        - field_spacing_top
       parent_name: ''
       weight: 9
       format_type: tab
@@ -37,8 +36,6 @@ third_party_settings:
         formatter: closed
         required_fields: true
       label: 'Appearance Settings'
-_core:
-  default_config_hash: LDYDd-_Lc6MRTk6QYHzvhmcj_N0o8lYy9uURxKYElPI
 id: block_content.isearch.default
 targetEntityType: block_content
 bundle: isearch
@@ -50,6 +47,12 @@ content:
     third_party_settings: {  }
     type: field_asurite_id_widget
     region: content
+  field_isearchtype:
+    type: options_select
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_media:
     weight: 8
     settings:
@@ -102,9 +105,7 @@ content:
     region: content
   field_source_ids:
     weight: 1
-    settings:
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
     type: field_directory_widget
     region: content
@@ -112,8 +113,14 @@ content:
     weight: 11
     settings: {  }
     third_party_settings: {  }
-    type: field_directory_widget
+    type: options_select
     region: content
+  field_spacing_top:
+    type: options_select
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   info:
     type: string_textfield
     weight: 0
@@ -124,4 +131,3 @@ content:
     third_party_settings: {  }
 hidden:
   field_display_type: true
-  field_isearchtype: true
