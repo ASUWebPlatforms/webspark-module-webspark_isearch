@@ -1,3 +1,14 @@
+!node_modules
+node_modules/*
+node_modules/@asu-design-system
+!node_modules/@asu-design-system
+node_modules/@asu-design-system/*
+
+!node_modules/@asu-design-system/components-library
+node_modules/@asu-design-system/components-library/*
+
+!node_modules/@asu-design-system/components-library/dist
+
 node_modules/asu-react-isearch-view
 !node_modules/asu-react-isearch-view
 node_modules/asu-react-isearch-view/*
