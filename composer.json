@@ -2,12 +2,6 @@
   "name": "asuwebplatforms/webspark-module-webspark_isearch",
   "description": "Provide integration with isearch",
   "type": "drupal-module",
-  "license": "GPL-2.0-or-later",
-  "authors": [
-    {
-      "name": "Euan Fergusson",
-      "email": "euan.fergusson@deptagency.com"
-    }
-  ],
+  "license": "MIT",
   "require": {}
 }
